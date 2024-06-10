@@ -1,53 +1,51 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro de Reservas para el Alojamiento Phoenix</title>
+
     <style>
-      /* Estilos CSS básicos */
       .error {
         color: red;
       }
     </style>
   </head>
   <body>
-    <h1>Registro de Reservas para el Alojamiento Phoenix</h1>
-
-    <!-- Formulario de Registro -->
+    <h1>Registro de reservas para el alojamiento Phoenix</h1>
     <form id="registerForm">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required /><br />
-
-      <label for="apellido">Apellido:</label>
-      <input type="text" id="apellido" name="apellido" required /><br />
-
-      <label for="telefono">Teléfono:</label>
-      <input type="tel" id="telefono" name="telefono" required /><br />
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required /><br />
-
-      <label for="dias">Cantidad de días de estadía:</label>
-      <input type="number" id="dias" name="cantidad de días" required /><br />
-
-      <label for="habitacion">Tipo de habitación:</label>
-      <select id="habitacion" name="tipo de habitación" required>
-        <option value="Individual">Individual</option>
-        <option value="Doble">Doble</option>
-        <option value="Suite">Suite</option></select
-      ><br />
-
-      <button type="button" id="registerButton">Registrar huésped</button>
+      <div>
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div>
+        <label for="lastname">Apellido</label>
+        <input type="text" name="lastname" id="lastname" required />
+      </div>
+      <div>
+        <label for="phone">Teléfono</label>
+        <input type="number" name="phone" id="phone" />
+      </div>
+      <div>
+        <label for="email">Correo electrónico</label>
+        <input type="text" name="email" id="email" />
+      </div>
+      <div>
+        <label for="days">Cantidad de días de estadía</label>
+        <input type="number" name="days" id="days" />
+      </div>
+      <div>
+        <label for="room">Tipo de habitación</label>
+        <select name="room" id="room">
+          <option value="single">Individual</option>
+          <option value="double">Doble</option>
+          <option value="suite">Suite</option>
+        </select>
+      </div>
+      <button type="button" id="registerButton">Registrar huesped</button>
     </form>
-
-    <!-- Div para mostrar mensajes de error de validación -->
     <div id="errorList" class="error"></div>
-
-    <!-- Div para mostrar la información del huésped y el precio final -->
-    <div id="guestInfo"></div>
-
-    <!-- Script JavaScript -->
+    <ul id="guestList"></ul>
     <script type="module" src="main.js"></script>
   </body>
 </html>

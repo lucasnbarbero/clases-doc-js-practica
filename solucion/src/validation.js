@@ -2,25 +2,21 @@ class Validation {
   static validateFormData(formData) {
     const errors = [];
 
-    // Validar que todos los campos estén completados
     for (let pair of formData.entries()) {
       const [fieldName, fieldValue] = pair;
-      if (!fieldValue) {
-        errors.push(`El campo ${fieldName} es requerido.`);
-      }
+      if (!fieldValue) errors.push(`El campo ${fieldName} es requerido`);
     }
 
-    // Validar que los campos numéricos contengan solo números
-    const numericFields = ["teléfono", "cantidad de días"];
-    for (let field of numericFields) {
+    const numerics = ["phone", "days"];
+
+    for (let field of numerics) {
       const fieldValue = formData.get(field);
       if (fieldValue && isNaN(fieldValue)) {
         errors.push(`El campo ${field} debe contener solo números.`);
       }
     }
 
-    // Validar que la cantidad de días sea mayor o igual a 1
-    const days = formData.get("cantidad de días");
+    const days = formData.get("days");
     if (days && parseInt(days) < 1) {
       errors.push("La cantidad de días debe ser mayor o igual a 1.");
     }
